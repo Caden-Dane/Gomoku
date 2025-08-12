@@ -1,0 +1,134 @@
+/* Basic styling for Ultimate Tic‑Tac‑Toe */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f9fb;
+  color: #333;
+}
+
+.game-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Layout for the large 3×3 grid */
+.ultimate-board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Each small board (3×3) */
+.small-board {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  gap: 3px;
+  border: 2px solid #666;
+  background-color: #f0d9b5;
+  position: relative;
+}
+
+/* Individual cell inside a small board */
+.small-cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+/* Hover effect for active boards */
+.small-board.active .small-cell:hover {
+  background-color: #ececec;
+}
+
+/* Inactive boards should appear muted and ignore clicks */
+.small-board.inactive {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Winning and tied boards overlay effects */
+.small-board.won.x,
+.small-board.won.o,
+.small-board.tie {
+  opacity: 0.7;
+}
+
+.winner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  pointer-events: none;
+}
+
+/* Connection panel styling */
+.connection-panel {
+  margin-bottom: 20px;
+}
+
+.connect-btn,
+.reset-btn {
+  padding: 10px 18px;
+  margin: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.connect-btn:hover,
+.reset-btn:hover {
+  opacity: 0.85;
+}
+
+/* Host and join panels input styling */
+.host-id-panel,
+.join-panel {
+  margin-top: 10px;
+}
+
+#peer-id-input {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.connection-status {
+  margin-top: 8px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Align the status element below the board */
+#status {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}

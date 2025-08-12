@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Tic‑Tac‑Toe</title>
+  <!-- Include the Ultimate Tic‑Tac‑Toe stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>Ultimate Tic‑Tac‑Toe</h1>
+    <!-- Connection controls for hosting or joining an online game -->
+    <div id="connection-panel" class="connection-panel">
+      <p class="panel-title">Play Online</p>
+      <button id="host-btn" class="connect-btn">Host Game</button>
+      <button id="join-btn" class="connect-btn">Join Game</button>
+      <div id="host-id-panel" class="host-id-panel" style="display:none;">
+        <p>Your game ID: <span id="game-id"></span></p>
+        <p>Share this ID with your opponent.</p>
+      </div>
+      <div id="join-panel" class="join-panel" style="display:none;">
+        <input type="text" id="peer-id-input" placeholder="Enter game ID" />
+        <button id="connect-btn" class="connect-btn">Connect</button>
+      </div>
+      <p id="connection-status" class="connection-status"></p>
+    </div>
+    <p id="status">Current Player: X</p>
+    <div id="ultimate-board" class="ultimate-board"></div>
+    <button id="reset-btn" class="reset-btn">Reset Game</button>
+  </div>
+
+  <!-- PeerJS library for P2P connections.  See docs: https://peerjs.com -->
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
